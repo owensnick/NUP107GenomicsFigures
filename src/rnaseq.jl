@@ -50,7 +50,8 @@ end
 
 function load_meta_rsem(;rsemdir="aligns-rsemstar-xt9", projdir=getprojectdir())
     pth = joinpath(projdir, "data", rsemdir )
-    files = glob("*.genes.results", pth)
+    
+    files = glob("*.genes.results.gz", pth)
     fields = split.(basename.(files), "_")
     treat = ifelse.(startswith.(getindex.(fields, 2), "UIC"), "UC", "MO")
     time = parse.(Float64, replace.(getindex.(fields, 2), Ref(r"UIC|MO" => ""))) .+ ifelse.(getindex.(fields, 3) .== "5", .5, .0)
