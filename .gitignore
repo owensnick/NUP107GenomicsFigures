@@ -1,6 +1,5 @@
 /Manifest.toml
-notebooks
 notebooks/extended
 results/
-data/
+data/ribozero-aligns-rsemstar-xt9/mir427
 figs/
